@@ -1,0 +1,14 @@
+<head>
+  <title>My first app in meteor</title>
+</head>
+
+<body>
+  <h1>Using templates</h1>
+  {{> profile}}
+</body>
+
+<template name="profile">
+  {{#each profilesCollection}}
+  {{name}} {{age}}
+  {{/each}}
+</template>
