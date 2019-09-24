@@ -46,7 +46,14 @@ Template.profile.helpers({
   profilesCollection: () => {
     return Profiles.find({});
   },
-  submitform: event => {
+});
+
+Template.profile.events({
+  "click button": (e, i) => {
+    console.log("Button clicked");
+    Session.set("randomNumber", Math.random(0, 99));
+  },
+  "submit form": event => {
     const target = event.target;
 
     const object = {
@@ -58,12 +65,5 @@ Template.profile.helpers({
     }
     
     Profiles.insert(object)
-  }
-});
-
-Template.profile.events({
-  "click button": (e, i) => {
-    console.log("Button clicked");
-    Session.set("randomNumber", Math.random(0, 99));
   }
 });
