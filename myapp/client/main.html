@@ -1,14 +1,65 @@
 <head>
   <title>My first app in meteor</title>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
 </head>
 
 <body>
-  <h1>Using templates</h1>
-  {{> profile}}
+  <div class="container">
+    <h1>Eventos uniandes</h1>
+    <br />
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          aria-describedby="emailHelp"
+          placeholder="Ingresa tu nombre"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Descripción</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          placeholder="Ingresa la descripción"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Responsable</label>
+        <input
+          type="text"
+          class="form-control"
+          id="responsible"
+          placeholder="Nombre del responsable"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Fecha de inicio</label>
+        <input
+          type="text"
+          class="form-control"
+          id="start_date"
+          placeholder="Ingresa la fecha de inicio"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Fecha de fin</label>
+        <input
+          type="text"
+          class="form-control"
+          id="end_date"
+          placeholder="Ingresa la fecha fin"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
 </body>
-
-<template name="profile">
-  {{#each profilesCollection}}
-  {{name}} {{age}}
-  {{/each}}
-</template>

@@ -42,10 +42,23 @@ Template.profile.helpers({
   randomHelper: () => {
     return Session.get("randomNumber");
   },
-      
+
   profilesCollection: () => {
     return Profiles.find({});
-}
+  },
+  submitform: event => {
+    const target = event.target;
+
+    const object = {
+      name: target.name.value,
+      responsible: target.resopnsible.value,
+      description: target.description.value,
+      start_date: target.start_date.value,
+      end_date: target.end_date.value
+    }
+    
+    Profiles.insert(object)
+  }
 });
 
 Template.profile.events({
